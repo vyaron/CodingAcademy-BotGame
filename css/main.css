@@ -8,7 +8,9 @@ body {
   background-color: #cbf4f7;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 900;
   padding: 0 5px;
   margin: 0;
@@ -125,7 +127,7 @@ a:hover {
   background-color: #fffff2;
 }
 
-.ui-accordion .ui-accordion-header.ui-state-active a{
+.ui-accordion .ui-accordion-header.ui-state-active a {
   color: #222;
 }
 
@@ -181,7 +183,8 @@ a:hover {
   -webkit-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   transform: scaleX(-1);
-  filter: fliph; /*IE*/
+  filter: fliph;
+  /*IE*/
 }
 
 .ui-icon-close {
@@ -230,10 +233,6 @@ a:hover {
   background-color: #4b4646;
 }
 
-#welcomeScreen {
-  background: #4b4646 url('../img/welcome_screen_bg.png') no-repeat left top;
-}
-
 #gameScreen {
   background: #000;
 }
@@ -241,31 +240,31 @@ a:hover {
 /* WELCOME SCREEN
    ================================================== */
 
-#welcomeScreen .helpButton, #welcomeScreen .achievementsButton, #welcomeScreen .levelSelectButton, #welcomeScreen .audioToggleButton {
-  position: absolute;
-  bottom: 20px;
+#welcomeScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #4b4646 url('../img/bg.png') no-repeat left top;  
+  background-size: cover;
+
+  .levelSelectButton {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 20px 40px;
+    border: 0;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #ffce11;
+
+    &:hover {
+      background-color: #ffd699;
+      transition: .3s;
+    }
+  }
+
 }
 
-#welcomeScreen .levelSelectButton {
-  bottom: 19px;
-}
-
-#welcomeScreen .audioToggleButton {
-  right: 40px;
-}
-
-#welcomeScreen .helpButton {
-  right: 75px;
-}
-
-#welcomeScreen .achievementsButton {
-  right: 150px;
-}
-
-#welcomeScreen .levelSelectButton {
-  right: 278px;
-  border-width: 2px;
-}
 
 /* ACHIEVEMENTS SCREEN
    ================================================== */
@@ -299,7 +298,7 @@ a:hover {
 
 #achievementsList li img {
   float: left;
-  margin:5px 15px 5px 5px;
+  margin: 5px 15px 5px 5px;
 }
 
 /* LEVEL SELECT SCREEN
@@ -385,7 +384,7 @@ a:hover {
   background-color: #4B4646;
 }
 
-#instructionsContainer > div.ui-widget-content {
+#instructionsContainer>div.ui-widget-content {
   overflow: auto;
   border: 0px;
 }
@@ -394,11 +393,14 @@ a:hover {
   cursor: move;
 }
 
-#instructionsContainer .ui-icon-close, li.ui-draggable-dragging .ui-icon-close {
+#instructionsContainer .ui-icon-close,
+li.ui-draggable-dragging .ui-icon-close {
   display: none;
 }
 
-#instructionsContainer li div, li.ui-draggable-dragging div, #instructionsContainer li span:first-child + span {
+#instructionsContainer li div,
+li.ui-draggable-dragging div,
+#instructionsContainer li span:first-child+span {
   display: none;
 }
 
@@ -420,13 +422,13 @@ a:hover {
 }
 
 /* allows the droppable program container to show a scrollbar when the program fills up */
-#programContainer > div {
+#programContainer>div {
   height: 442px;
   overflow: auto;
 }
 
 /* the droppable area should fill the entire programcontainer */
-#programContainer > div > ul {
+#programContainer>div>ul {
   min-height: 417px;
 }
 
@@ -439,23 +441,27 @@ a:hover {
   height: 18px;
 }
 
-#programContainer > div.ui-widget-content {
+#programContainer>div.ui-widget-content {
   height: 438px;
   border: 0px;
   overflow: auto;
 }
 
-#instructionsContainer ul, #programContainer ul {
+#instructionsContainer ul,
+#programContainer ul {
   margin: 0em;
   list-style: none;
   padding: 5px;
 }
 
-#instructionsContainer ul.ui-droppable, #programContainer ul.ui-droppable {
+#instructionsContainer ul.ui-droppable,
+#programContainer ul.ui-droppable {
   padding-bottom: 20px;
 }
 
-#instructionsContainer li, #programContainer li, li.ui-draggable-dragging {
+#instructionsContainer li,
+#programContainer li,
+li.ui-draggable-dragging {
   list-style: none;
   border: 1px solid black;
   margin: 0 0 2px 0;
@@ -466,7 +472,9 @@ a:hover {
   border-color: #7ca6ba;
 }
 
-#instructionsContainer li p, #programContainer li p, li.ui-draggable-dragging p {
+#instructionsContainer li p,
+#programContainer li p,
+li.ui-draggable-dragging p {
   padding: 0px;
   margin: 0px;
   margin-bottom: 0.1em;
@@ -477,7 +485,8 @@ a:hover {
   line-height: 1.2;
 }
 
-#instructionsContainer li.ui-state-hover, #programContainer li.ui-state-hover {
+#instructionsContainer li.ui-state-hover,
+#programContainer li.ui-state-hover {
   background-color: #777777;
   border-color: #a3cfc6;
 }

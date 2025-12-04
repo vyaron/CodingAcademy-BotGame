@@ -31,14 +31,14 @@ $(document).ready(function() {
   });
 
   // show level select screen button
-  $('.levelSelectButton').button({
-    icons: {
-      primary: "ui-icon-power"
-    }
-  }).click(function() {
-    lightBot.ui.showLevelSelectScreen();
-  });
-  $('#gameScreen .levelSelectButton').button('option', {icons: {primary: 'ui-icon-home'}});
+  // $('.levelSelectButton').button({
+  //   icons: {
+  //     primary: "ui-icon-power"
+  //   }
+  // }).click(function() {
+  //   lightBot.ui.showLevelSelectScreen();
+  // });
+  // $('#gameScreen .levelSelectButton').button('option', {icons: {primary: 'ui-icon-home'}});
 
   // show game screen buttons
   $('#levelList li').live({
