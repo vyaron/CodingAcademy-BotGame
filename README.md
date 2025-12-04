@@ -2,6 +2,8 @@
 
 An interactive programming puzzle game that teaches coding concepts through visual problem-solving. Guide a robot through various levels by writing simple programs using drag-and-drop commands.
 
+🎮 **[Play the Game](https://vyaron.github.io/CodingAcademy-BotGame/)** 🎮
+
 ![Game Preview](img/bg.png)
 
 ## 🎮 About
