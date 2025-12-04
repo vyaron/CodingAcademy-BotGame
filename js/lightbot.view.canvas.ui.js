@@ -9,7 +9,7 @@
 
       // save in history if parameter hist is not set and then set the new page title
       if (hist == null && lightBot.ui.History) lightBot.ui.History.pushState({page: 'welcomeScreen'});
-      $('title').text('Lightbot - Welcome');
+      // $('title').text('Lightbot - Welcome');
 
       $('.ui-screen').hide();
       $('#welcomeScreen').show();
