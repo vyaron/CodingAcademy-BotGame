@@ -305,6 +305,11 @@ a:hover {
 /* ACHIEVEMENTS SCREEN
    ================================================== */
 
+#achievementsScreen h1 {
+  color: #222;
+}
+
+
 #achievementsScreen .mainMenuButton {
   position: absolute;
   left: 40px;
@@ -339,6 +344,11 @@ a:hover {
 
 /* LEVEL SELECT SCREEN
    ================================================== */
+
+#levelSelectScreen h1 {
+  color: #222;
+}
+
 
 #levelSelectScreen .mainMenuButton {
   position: absolute;
