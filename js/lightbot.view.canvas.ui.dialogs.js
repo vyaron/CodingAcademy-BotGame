@@ -10,6 +10,7 @@ $(document).ready(function() {
     height: 200,
     stack: false,
     resizable: false,
+    position: { my: 'center center', at: 'center center', of: '#canvasContainer', offset: '0 -100' },
     close: function() {
       lightBot.ui.showLevelSelectScreen();
     },

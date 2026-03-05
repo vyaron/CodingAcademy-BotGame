@@ -39,16 +39,17 @@ var canvasView = function(canvas) {
       // stop the bot
       lightBot.bot.clearExecutionQueue();
 
-      // award medals
+      // award medals and achievements
       var medal = lightBot.medals.awardMedal();
-      lightBot.medals.display(medal); // show medal dialog
+      lightBot.achievements.awardAchievements();
 
-      // award achievements
-      var achievements = lightBot.achievements.awardAchievements();
-      lightBot.achievements.display(achievements);
-
-      // set the map as complete
+      // set the map as complete immediately so this block doesn't re-trigger
       lightBot.map.complete();
+
+      // show the single level-complete dialog after a short delay
+      setTimeout(function() {
+        lightBot.medals.display(medal);
+      }, 1000);
 
       // return to map selection screen
     }

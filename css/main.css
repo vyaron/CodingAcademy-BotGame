@@ -1,11 +1,40 @@
+:root {
+  --bg:          #06080f;
+  --surface:     #0c1220;
+  --surface2:    #111a2e;
+  --surface3:    #182438;
+  --cyan:        #00e5ff;
+  --cyan-dim:    rgba(0, 229, 255, 0.35);
+  --green:       #00ff88;
+  --green-dim:   rgba(0, 255, 136, 0.35);
+  --red:         #ff2244;
+  --red-dim:     rgba(255, 34, 68, 0.35);
+  --yellow:      #ffc107;
+  --yellow-dim:  rgba(255, 193, 7, 0.35);
+  --text:        #c8dce8;
+  --text-dim:    #4a6680;
+  --border:      rgba(0, 229, 255, 0.1);
+  --border-h:    rgba(0, 229, 255, 0.4);
+
+  --glow-cyan:   0 0 8px rgba(0, 229, 255, 0.55), 0 0 22px rgba(0, 229, 255, 0.2);
+  --glow-green:  0 0 8px rgba(0, 255, 136, 0.55), 0 0 20px rgba(0, 255, 136, 0.2);
+  --glow-red:    0 0 8px rgba(255, 34, 68, 0.55),  0 0 20px rgba(255, 34, 68, 0.2);
+
+  --font-mono: 'Share Tech Mono', 'Fira Code', 'Courier New', monospace;
+  --font-ui:   'Rajdhani', 'Segoe UI', system-ui, sans-serif;
+
+  --radius: 4px;
+  --transition: 0.14s ease;
+}
+
 /* GENERAL HTML TAGS
    ================================================== */
 
 body {
   font-size: 11px;
-  font-family: 'Lato', sans-serif;
-  color: #222222;
-  background-color: #f1eb96;
+  font-family: var(--font-ui);
+  color: var(--text);
+  background-color: var(--bg);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -18,7 +47,7 @@ h3 {
   padding: 0 5px;
   margin: 0;
   text-transform: uppercase;
-  color: #fffff2;
+  color: var(--cyan);
 }
 
 h1 {
@@ -29,7 +58,7 @@ h1 {
 h2 {
   font-size: 18px;
   padding: 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-h);
 }
 
 h3 {
@@ -56,9 +85,9 @@ a:hover {
    ================================================== */
 
 .ui-widget-content {
-  border: 1px solid #7CA6BA;
+  border: 1px solid var(--border-h);
   background: none;
-  background-color: #4B4646;
+  background-color: var(--surface);
 }
 
 /* ===[ JQuery UI dialogs ]=== */
@@ -69,40 +98,39 @@ a:hover {
 }
 
 .ui-dialog-title {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-ui);
   font-weight: 900;
   font-size: 20px;
-  color: #fffff2;
+  color: var(--cyan);
 }
 
 .ui-dialog-content {
-  font-family: 'Lato', sans-serif;
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-ui);
   font-size: 14px;
-  color: #fffff2;
+  color: var(--text);
 }
 
 /* ===[ JQuery UI buttons ]=== */
 
 .ui-button.ui-state-default {
   background: none;
-  background-color: #5c5c5c;
-  border-color: #7ca6ba;
+  background-color: var(--surface2);
+  border-color: var(--border-h);
 }
 
 .ui-button.ui-state-hover {
-  background-color: #777777;
-  border-color: #a3cfc6;
+  background-color: var(--surface3);
+  border-color: var(--cyan);
 }
 
 .ui-button.ui-state-highlight {
-  border-color: #E59700;
+  border-color: var(--yellow);
 }
 
 .ui-button .ui-button-text {
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-ui);
   font-weight: 700;
-  color: #FFFFF2;
+  color: var(--text);
   font-size: 13px;
   line-height: 1.2;
 }
@@ -110,33 +138,33 @@ a:hover {
 /* ===[ JQuery UI accordion ]=== */
 
 .ui-accordion .ui-accordion-header {
-  border: 1px solid #7ca6ba;
+  border: 1px solid var(--border-h);
   margin-top: 5px;
-  background-color: #5c5c5c;
+  background-color: var(--surface2);
   background-image: none;
   padding-left: 20px;
 }
 
 .ui-accordion .ui-accordion-header a {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-ui);
   font-weight: 900;
-  color: #FFFFF2;
+  color: var(--text);
   padding-left: 0;
   font-size: 14px;
 }
 
 .ui-accordion .ui-accordion-header.ui-state-active {
-  border-color: #a3cfc6;
-  background-color: #fffff2;
+  border-color: var(--cyan);
+  background-color: var(--surface3);
 }
 
 .ui-accordion .ui-accordion-header.ui-state-active a {
-  color: #222;
+  color: var(--cyan);
 }
 
 .ui-accordion .ui-accordion-header.ui-state-hover:not(.ui-state-active) {
-  border-color: #a3cfc6;
-  background-color: #777777;
+  border-color: var(--border-h);
+  background-color: var(--surface3);
 }
 
 .ui-accordion .ui-accordion-header:first-child {
@@ -144,15 +172,16 @@ a:hover {
 }
 
 .ui-accordion .ui-accordion-content {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-ui);
   font-size: 14px;
   line-height: 18px;
-  border: 1px solid #a3cfc6;
+  border: 1px solid var(--border-h);
   border-top: 0px;
   margin-top: -3px;
-  background-color: #fffff2;
+  background-color: var(--surface);
   background-image: none;
   padding: 10px 20px;
+  color: var(--text);
 }
 
 /* ===[ Additional JQuery icons (achievements and medals) ]=== */
@@ -255,50 +284,115 @@ a:hover {
 }
 
 #gameScreen {
-  background: #000;
+  background: var(--bg);
 }
 
 /* WELCOME SCREEN
    ================================================== */
 
 #welcomeScreen {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #4b4646 url('../img/bg.png') no-repeat center center;  
-  background-size: contain;
+  background: var(--bg);
   overflow: hidden;
+}
 
-  .levelSelectButton {
-    cursor: pointer;
-    font-size: 24px;
-    padding: 20px 40px;
-    border: 0;
-    margin: 20px;
-    border-radius: 5px;
-    background-color: #ffce11;
-    transition: .3s;
+.hero-sphere {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 580px;
+  height: 580px;
+  opacity: 0.55;
+  pointer-events: none;
+}
 
-    &:hover {
-      background-color: #ffd699;
-      padding: 20px 50px;
-    }
-  }
+.hero-sphere img {
+  width: 100%;
+  height: 100%;
+}
 
-  button {
-    max-width: 90%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 80px;
+  gap: 12px;
+  width: 100%;
+}
 
-  @media (max-width: 600px) {
-    .levelSelectButton {
-      font-size: 18px;
-      padding: 15px 30px;
-    }
-  }
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-ui);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.hero-title span {
+  color: var(--cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.hero-sub {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  margin: 4px 0 4px;
+}
+
+.hero-desc {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 420px;
+  margin: 0 0 16px;
+}
+
+.levelSelectButton {
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 40px;
+  border: 1px solid var(--border-h);
+  border-radius: var(--radius);
+  background-color: var(--surface2);
+  color: var(--cyan);
+  box-shadow: var(--glow-cyan);
+  transition: var(--transition);
+}
+
+.levelSelectButton:hover {
+  background-color: var(--surface3);
+  border-color: var(--cyan);
+  padding: 14px 50px;
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 48px; }
+  .levelSelectButton { font-size: 14px; padding: 12px 28px; }
 }
 
 
@@ -306,7 +400,7 @@ a:hover {
    ================================================== */
 
 #achievementsScreen h1 {
-  color: #222;
+  color: var(--cyan);
 }
 
 
@@ -321,20 +415,20 @@ a:hover {
   overflow: auto;
   padding: 0px;
   margin: 0px 40px;
-  color: #fffff2;
+  color: var(--text);
   list-style-type: none;
 }
 
 #achievementsList li {
-  border: 1px solid #7ca6ba;
-  background-color: #5c5c5c;
+  border: 1px solid var(--border-h);
+  background-color: var(--surface2);
   height: 50px;
   margin-bottom: 5px;
 }
 
 #achievementsList li:hover {
-  border-color: #a3cfc6;
-  background-color: #777777;
+  border-color: var(--cyan);
+  background-color: var(--surface3);
 }
 
 #achievementsList li img {
@@ -346,7 +440,7 @@ a:hover {
    ================================================== */
 
 #levelSelectScreen h1 {
-  color: #222;
+  color: var(--cyan);
 }
 
 
@@ -374,28 +468,29 @@ a:hover {
   text-align: center;
   cursor: pointer;
   position: relative;
-  border: 1px solid #7ca6ba;
-  background-color: #5c5c5c;
-  color: #fffff2;
+  border: 1px solid var(--border-h);
+  background-color: var(--surface2);
+  color: var(--text);
 }
 
 #levelSelectScreen li.ui-state-highlight {
-  color: #222;
+  color: var(--cyan);
   background: none;
-  border-color: #a3cfc6;
-  background-color: #f8f4d2;
+  border-color: var(--cyan);
+  background-color: var(--surface3);
+  box-shadow: var(--glow-cyan);
 }
 
 #levelSelectScreen li.ui-state-highlight.ui-state-hover {
   background: none;
-  border-color: #a3cfc6;
-  background-color: #fbfaf6;
+  border-color: var(--cyan);
+  background-color: var(--surface3);
 }
 
 #levelSelectScreen li.ui-state-hover:not(.ui-state-highlight) {
   background: none;
-  border-color: #a3cfc6;
-  background-color: #777777;
+  border-color: var(--border-h);
+  background-color: var(--surface3);
 }
 
 /* GAME SCREEN
@@ -407,7 +502,7 @@ a:hover {
   left: 1px;
   width: 690px;
   height: 666px;
-  background-color: white;
+  background-color: var(--bg);
 }
 
 #buttonContainer {
@@ -416,7 +511,51 @@ a:hover {
   bottom: 1px;
   width: 690px;
   height: 30px;
-  background-color: #4B4646;
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+
+#buttonContainer button {
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 3px 14px;
+  background-color: var(--surface2);
+  color: var(--text-dim);
+  border: 1px solid rgba(74, 102, 128, 0.4);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+#buttonContainer button:hover {
+  background-color: var(--surface3);
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+#buttonContainer #runButton {
+  color: var(--green);
+  border-color: rgba(0, 255, 136, 0.4);
+}
+
+#buttonContainer #runButton:hover {
+  border-color: var(--green);
+  box-shadow: var(--glow-green);
+}
+
+#buttonContainer #clearButton {
+  color: var(--red);
+  border-color: rgba(255, 34, 68, 0.4);
+}
+
+#buttonContainer #clearButton:hover {
+  border-color: var(--red);
+  box-shadow: var(--glow-red);
 }
 
 /* ===[ Instruction Container ]=== */
@@ -427,7 +566,7 @@ a:hover {
   right: 1px;
   width: 286px;
   height: 220px;
-  background-color: #4B4646;
+  background-color: var(--surface);
 }
 
 #instructionsContainer>div.ui-widget-content {
@@ -458,13 +597,17 @@ li.ui-draggable-dragging div,
   right: 1px;
   width: 286px;
   height: 476px;
-  background-color: #4B4646;
+  background-color: var(--surface);
 }
 
 #programContainer input[type="number"] {
   margin: 0px;
   padding: 0px;
   width: 40px;
+  background-color: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border-h);
+  border-radius: var(--radius);
 }
 
 /* allows the droppable program container to show a scrollbar when the program fills up */
@@ -509,13 +652,13 @@ li.ui-draggable-dragging div,
 #programContainer li,
 li.ui-draggable-dragging {
   list-style: none;
-  border: 1px solid black;
+  border: 1px solid var(--border);
   margin: 0 0 2px 0;
   padding: 5px 5px;
   font-size: 11px;
   background: none;
-  background-color: #5c5c5c;
-  border-color: #7ca6ba;
+  background-color: var(--surface2);
+  border-color: var(--border-h);
 }
 
 #instructionsContainer li p,
@@ -524,17 +667,17 @@ li.ui-draggable-dragging p {
   padding: 0px;
   margin: 0px;
   margin-bottom: 0.1em;
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--font-ui);
   font-weight: 700;
-  color: #FFFFF2;
+  color: var(--text);
   font-size: 13px;
   line-height: 1.2;
 }
 
 #instructionsContainer li.ui-state-hover,
 #programContainer li.ui-state-hover {
-  background-color: #777777;
-  border-color: #a3cfc6;
+  background-color: var(--surface3);
+  border-color: var(--cyan);
 }
 
 li.ui-draggable-dragging {
@@ -543,12 +686,12 @@ li.ui-draggable-dragging {
 
 /* highlight droppable areas with a color */
 .ui-state-droppable {
-  background-color: #fffed0;
+  background-color: var(--green-dim);
 }
 
 /* highlight the droppable area the mouse is currently hovering with another color */
 .ui-state-droppable-hover {
-  background-color: #fbeea4;
+  background-color: rgba(0, 255, 136, 0.55);
 }
 
 /* HELP SCREEN
