@@ -59,17 +59,26 @@ $(document).ready(function() {
       primary: "ui-icon-play"
     }
   }).click(function() {
-    if (lightBot.bot.isInExecutionMode()) {
-      // reset the map (resets the bot as well)
-      lightBot.map.reset();
+    var button = $(this);
+    var label = button.button('option', 'label');
 
-      $(this).button('option', {label: 'Run', icons: {primary: 'ui-icon-play'}}).removeClass('ui-state-highlight');
-    } else {
+    function runCurrentProgram() {
       var instructions = lightBot.ui.editor.getInstructions($('#programContainer > div > ul > li'));
       lightBot.bot.queueInstructions(instructions);
       lightBot.bot.execute();
+      button.button('option', {label: 'Stop', icons: {primary: 'ui-icon-stop'}}).addClass('ui-state-highlight');
+    }
 
-      $(this).button('option', {label: 'Stop', icons: {primary: 'ui-icon-stop'}}).addClass('ui-state-highlight');
+    if (label === 'Stop') {
+      // reset the map (resets the bot as well)
+      lightBot.map.reset();
+
+      button.button('option', {label: 'Run', icons: {primary: 'ui-icon-play'}}).removeClass('ui-state-highlight');
+    } else if (label === 'Start Over') {
+      lightBot.map.reset();
+      button.button('option', {label: 'Run', icons: {primary: 'ui-icon-play'}}).removeClass('ui-state-highlight');
+    } else {
+      runCurrentProgram();
     }
   });
 
@@ -79,6 +88,9 @@ $(document).ready(function() {
       primary: "ui-icon-document"
     }
   }).click(function() {
+    if (!window.confirm('Clear all instructions?')) {
+      return;
+    }
     $('#programContainer ul').empty();
     lightBot.ui.editor.saveProgram();
   });

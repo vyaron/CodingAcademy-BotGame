@@ -27,6 +27,10 @@
     clearExecutionQueue: function() {
       this.executionQueue.length = 0;
     },
+    stopExecution: function() {
+      this.executionQueue.length = 0;
+      this.executionMode = false;
+    },
     queueInstruction: function(instruction) {
       this.instructionQueue.push(instruction);
     },

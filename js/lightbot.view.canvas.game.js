@@ -32,12 +32,15 @@ var canvasView = function(canvas) {
       var instruction = lightBot.bot.executeNextInstruction(); // execute the next instruction
       var newPos = lightBot.bot.currentPos; // get the new position
       lightBot.bot.animate(instruction, oldPos, newPos);
+    } else if (lightBot.bot.isInExecutionMode() && lightBot.bot.isReadyForNextInstruction() && !lightBot.bot.hasNextInstruction()) {
+      lightBot.bot.stopExecution();
+      $('#runButton').button('option', {label: 'Start Over', icons: {primary: 'ui-icon-refresh'}}).removeClass('ui-state-highlight');
     }
     // check if map has been completed here
     if (lightBot.map.ready() && lightBot.map.state.check(lightBot.map.state.allLightsOn)) {
 
       // stop the bot
-      lightBot.bot.clearExecutionQueue();
+      lightBot.bot.stopExecution();
 
       // award medals and achievements
       var medal = lightBot.medals.awardMedal();
